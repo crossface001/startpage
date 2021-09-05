@@ -28,6 +28,7 @@
     <script defer type="application/javascript" src="js/custom.min.js"></script>
     <script defer type="application/javascript" src="js/sortable.min.js"></script>
     <script defer type="application/javascript" src="js/jscolor.min.js"></script>
+    <script defer type="application/javascript" src="js/canvas/matrix.min.js"></script>
 	<script defer type="application/javascript" src="js/def-settings-reloader.min.js"></script>
 	<script defer type="application/javascript" src="js/index_search_button.min.js"></script>
     <script defer type="application/javascript" src="js/searchlinks.min.js"></script>
@@ -72,7 +73,47 @@
                 </div>
             </div>
         </div>
+        <div id="resetToDefault">
+            <p class="btn hollow">Reset To Default</p>
         </div>
+        <div id="customSettings">
+            <p id="toggleSettings" class="btn hollow" onclick="toggleSettings()">Custom Settings</p>
+            <div id="settingsContainer">
+                <p id="exportSettings" class="btn hollow small">Export</p>
+                <label id="importLabel" for="importSettings" class="btn hollow small">Import</label>
+                <input type="file" id="importSettings" onchange="return importSettings()"/>
+            </div>
+        </div>
+        <div id="customMatrix">
+            <button onclick="togglePicker()" id="colorPicker" class="btn hollow jscolor
+                {onFineChange:'updateMatrixColor(this)',
+                valueElement: null,
+                showOnClick: false,
+                width: 132,
+                height: 100,
+                sliderSize: 12,
+                padding: 10,
+                value:'#0C85D3',
+                position:'bottom',
+                smartPosition: false,
+                borderColor:'#03a9f438',
+                insetColor:'#000',
+                backgroundColor:'#1f2326'}">
+                Matrix Color
+            </button>
+            <div id="pickerContainer"></div>
+            <p id="resetColor" class="btn hollow small">Reset Color</p>
+        </div>
+        <div id="customAnimations">
+            <p id="customAnimationsBtn" class="btn hollow toggle" onclick="toggleAnimations()">Animation</p>
+            <div id="customAnimationsList" class="animations">
+                <p id="stars" class="btn hollow small animationBtn">Stars</p>
+                <span id="trails" class="btn hollow small animationBtn">Trails</span>
+                <p id="nodes" class="btn hollow small animationBtn">Nodes</p>
+				<span id="gradient" class="btn hollow small animationBtn">Gradient</span>
+                <p id="circuits" class="btn hollow small animationBtn">Circuits</p>
+                <span id="matrix" class="btn hollow small reset animationBtn">Reset Animation</span>
+            </div>
         </div>
         <div id="customBackgrounds">
             <p id="customBgBtnToggle" class="btn hollow toggle">Background</p>
