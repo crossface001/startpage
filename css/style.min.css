@@ -71,6 +71,7 @@
     border: 0;
   }
   .background {
+    background: #0d1011 url("../media/background.jpg") no-repeat center fixed;
     position: fixed;
     width: 100%;
     height: 145%;
